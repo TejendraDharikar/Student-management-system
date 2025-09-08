@@ -22,9 +22,9 @@ const handleLogin=async(e)=>{
   if(data.success){
     const role=data.role;
     if(role==="teacher"){
-      navigate("/teacherlayout");
+      navigate("/teacherdashboard");
     }else if(role==="student"){
-      navigate("/studentlayout");
+      navigate("/studentdashboard");
     }else{
       setError("Invalid credentials");
     }

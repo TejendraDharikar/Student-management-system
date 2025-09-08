@@ -1,22 +1,23 @@
-import { createBrowserRouter, NavLink, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, NavLink, RouterProvider } from "react-router-dom";
 import Home from "./pages/teacher/Home";
 import Class from "./pages/student/Class";
 import Subject from "./pages/student/Subject";
-import StudentLayout from "./layout/StudentLayout";
-import TeacherLayout from "./layout/TeacherLayout";
+
 import Student from "./pages/student/Student";
 import Teacher from "./pages/teacher/Teacher";
 import Login from "./components/Login";
+import StudentDashboard from "./layout/StudentDashboard";
+import TeacherDashboard from "./layout/TeacherDashboard";
 
 const router = createBrowserRouter([
   {
     path:"/",
     element:<Login/>
   },{
-    path: "/studentlayout",
-    element: <StudentLayout />,
+    path: "/studentdashboard",
+    element: <StudentDashboard />,
     children: [
-      { index: true, element: <StudentLayout /> },
+      { index: true, element: <Navigate to="student" />},
       {
         path: "class",
         element: <Class />,
@@ -32,14 +33,16 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/teacherlayout",
-    element: <TeacherLayout />,
+    path: "/teacherdashboard",
+    element: <TeacherDashboard />,
     children: [
       {index:true,
-        path: "home",
-        element: <Home />,
+        element: <Navigate to="home" />
       },
-
+       {
+        path: "home",
+        element: <Home />
+      },
       {
         path: "teacher",
         element: <Teacher/>,
