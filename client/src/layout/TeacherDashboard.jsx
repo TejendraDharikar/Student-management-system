@@ -1,13 +1,26 @@
 import { NavLink, Outlet } from "react-router-dom"
+import Logout from "../components/logout"
+import Back from "../components/Back"
+import Forward from "../components/Forward"
 
 const TeacherDashboard = () => (
   <div className="bg-black text-white">
+     
     <div className="mx-auto px-4 py-4 flex items-center justify-between ">
-    <h2 className="text-xl font-bold p-4">Teacher Panel</h2>
+    <h2 className=" flex text-xl font-bold p-4">Teacher Dashboard</h2>
     <nav className="flex gap-4 px-4">
       <NavLink to="home">HOME</NavLink>
       <NavLink to="teacher">TEACHER</NavLink>
     </nav>
+   <div className="flex gap-4">
+    <div className="flex gap-1">
+    <Back/>
+    <Forward/>
+    </div>
+    
+     <Logout/>
+   </div>
+   
      </div>
     <hr />
    
