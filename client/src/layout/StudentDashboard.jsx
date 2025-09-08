@@ -2,6 +2,7 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import Logout from '../components/logout'
 import Back from '../components/Back'
+import Forward from '../components/Forward'
 
 const StudentDashboard = () => {
   return (

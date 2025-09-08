@@ -35,8 +35,15 @@ const handleLogin=async(e)=>{
 };
   return (
     
-   <div className="flex items-center justify-center h-screen bg-gray-100">
-      <form onSubmit={handleLogin} className="bg-black text-white p-6 rounded shadow-md w-80">
+   <div className="flex flex-col items-center justify-center  h-screen  bg-gradient-to-br from-indigo-900 to-gray-900
+">
+   
+<h1 className=' text-4xl text-white  align-center text-black mb-12 mt-[-250px]'>Welcome to Student Management System 
+    </h1>
+    
+   
+    <p className='flex justify-center text-bold gaps-3 text-xl text-white mt-25'>please enter your credentials:</p>
+      <form onSubmit={handleLogin} className="bg-white text-gray-800 p-8 rounded-xl shadow-lg w-96 space-y-6">
         <h2 className="text-xl font-bold mb-4">Login</h2>
         <input
           type="email"
