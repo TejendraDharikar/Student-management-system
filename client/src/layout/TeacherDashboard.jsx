@@ -8,9 +8,19 @@ const TeacherDashboard = () => (
      
     <div className="mx-auto px-4 py-4 flex items-center justify-between ">
     <h2 className=" flex text-xl font-bold p-4">Teacher Dashboard</h2>
-    <nav className="flex gap-4 px-4">
-      <NavLink to="home">HOME</NavLink>
-      <NavLink to="teacher">TEACHER</NavLink>
+    <nav className="flex gap-12 px-4">
+      <NavLink to="home"
+       className={({ isActive }) =>
+            isActive
+              ? "text-yellow-500"
+              : "text-white "
+          }>Home</NavLink>
+      <NavLink to="teacher"
+       className={({ isActive }) =>
+            isActive
+              ? "text-yellow-500"
+              : "text-white "
+          }>Teacher</NavLink>
     </nav>
    <div className="flex gap-4">
     <div className="flex gap-1">
