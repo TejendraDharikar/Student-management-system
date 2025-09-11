@@ -1,14 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-
-const fetchClasses = async () => {
-  const res = await fetch("http://localhost/student-management-system/server/get_classes.php");
-  const data = await res.json();
-  if (!data.success) throw new Error("Failed to fetch classes");
-  return data.data;
-};
+import { fetchClasses } from '../../ApiStore/Api_student/ApiData_stud';
 
 
-const Class = () => {
+const MyClass = () => {
 const { data, isLoading, isError, error } = useQuery({
     queryKey: ['classes'],
     queryFn: fetchClasses,
@@ -46,4 +40,4 @@ const { data, isLoading, isError, error } = useQuery({
 
 };
 
-export default Class;
+export default MyClass;

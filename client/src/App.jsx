@@ -1,62 +1,66 @@
-import { createBrowserRouter, Navigate, NavLink, RouterProvider } from "react-router-dom";
-import Home from "./pages/teacher/Home";
-import Class from "./pages/student/Class";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import Subject from "./pages/student/Subject";
-
-import Student from "./pages/student/Student";
+import Student from "./pages/teacher/Student";
 import Teacher from "./pages/teacher/Teacher";
 import Login from "./components/Login";
 import StudentDashboard from "./layout/StudentDashboard";
 import TeacherDashboard from "./layout/TeacherDashboard";
+import StudentHome from "./pages/student/StudentHome";
+import TeacherHome from "./pages/teacher/TeacherHome";
+import MyClass from "./pages/student/MyClass";
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element:<Login/>
-  },{
+    path: "/",
+    element: <Login />,
+  },
+  {
     path: "/studentdashboard",
     element: <StudentDashboard />,
     children: [
-      { index: true, element: <Navigate to="home" />},
+      { index: true, element: <Navigate to="studenthome" /> },
       {
-        path: "home",
-        element: <Home />
+        path: "studenthome",
+        element: <StudentHome />,
       },
       {
-        path: "class",
-        element: <Class />,
+        path: "myclass",
+        element: <MyClass />,
       },
       {
         path: "subject",
         element: <Subject />,
       },
-      {
-        path: "student",
-        element: <Student/>,
-      },
+     
     ],
   },
   {
     path: "/teacherdashboard",
     element: <TeacherDashboard />,
     children: [
-      {index:true,
-        element: <Navigate to="home" />
+      { index: true, element: <Navigate to="teacherhome" /> },
+      {
+        path: "teacherhome",
+        element: <TeacherHome />,
       },
        {
-        path: "home",
-        element: <Home />
+        path: "student",
+        element: <Student />,
       },
       {
         path: "teacher",
-        element: <Teacher/>,
+        element: <Teacher />,
       },
     ],
   },
 ]);
 
 function App() {
-  return<RouterProvider router={router} />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;

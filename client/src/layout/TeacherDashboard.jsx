@@ -9,12 +9,20 @@ const TeacherDashboard = () => (
     <div className="mx-auto px-4 py-4 flex items-center justify-between ">
     <h2 className=" flex text-xl font-bold p-4">Teacher Dashboard</h2>
     <nav className="flex gap-12 px-4">
-      <NavLink to="home"
+      <NavLink to="teacherhome"
        className={({ isActive }) =>
             isActive
               ? "text-yellow-500"
               : "text-white "
           }>Home</NavLink>
+          <NavLink
+            to="student"
+            className={({ isActive }) =>
+              isActive ? "text-yellow-500" : "text-white "
+            }
+          >
+            Student
+          </NavLink>
       <NavLink to="teacher"
        className={({ isActive }) =>
             isActive

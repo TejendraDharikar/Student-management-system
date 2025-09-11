@@ -24,6 +24,7 @@ const handleLogin=async(e)=>{
     if(role==="teacher"){
       navigate("/teacherdashboard");
     }else if(role==="student"){
+      localStorage.setItem("studentEmail", email);
       navigate("/studentdashboard");
     }else{
       setError("Invalid credentials");
